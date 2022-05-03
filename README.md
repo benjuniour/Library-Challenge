@@ -6,9 +6,17 @@ This is a simple REST application that mimicks some activities of an actual libr
 - Some user stories are more challenging than others
 
 ## Pre-Requisites
+- Python installed on your computer
 - Basic python understanding
 - Understanding of RESTful Services
 - Basic understanding of SQL and SQL Lite
+
+## Set Up
+- Create a virtual environment in the cloned directory by entering `python -m venv env`in your terminal/cmd: 
+- Activate your virtual environment by entering `env\scripts\activate`.
+- Next, install all dependencies via this command `pip install -r requirements.txt`
+- All done
+- _NOTE: Activate your virtual environment using the command above whenever you need to start development. This is required once until you close your terminal. If you're using VSCode or any IDE, it may detect the virtual environment and might automatically change your workspace. In this case, you do not need to activate it manually _
 
 ## Requirements
 - Expose a REST endpoint for each of the controller methods
