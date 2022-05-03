@@ -12,6 +12,7 @@ This is a simple REST application that mimicks some activities of an actual libr
 - Basic understanding of SQL and SQL Lite
 
 ## Set Up
+- Fork this repo
 - Create a virtual environment in the cloned directory by entering `python -m venv env`in your terminal/cmd: 
 - Activate your virtual environment by entering `env\scripts\activate`.
 - Next, install all dependencies via this command `pip install -r requirements.txt`
