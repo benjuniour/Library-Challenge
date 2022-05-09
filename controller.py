@@ -1,5 +1,7 @@
 from flask import Flask, json, jsonify
 from flask_cors import CORS
+from room_service import RoomService
+from book_service import BookService
 import typing
 
 app = Flask(__name__)
@@ -14,20 +16,20 @@ def login(name: str) :
   pass
 
 def logout(name: str) :
-  # TODO: missing implementation
-  pass
+  return "Successfully Signed Out."
 
 def reserve_room(room_id: str):
-  # TODO: missing implementation
+  room_service = RoomService()
+  # room_service.reserve_room(room_id)
   pass
 
 def rooms():
-  # TODO: missing implementation
-  pass
+  room_service = RoomService()
+  print(room_service.find_all())
 
 def books():
-  # TODO: missing implementation
-  pass
+  book_service = BookService()
+  print(book_service.find_all())
 
 def checkout_book(book_id: str):
   # TODO: missing implementation
