@@ -7,6 +7,5 @@ class Student:
         
         self.id = random.randrange(1, 100)
 
-    def __repr__(self):
-        rep = "{} {}".format(self.fname, self.lname)
-        return rep
+    def getFullName(self):
+        return "{} {}".format(self.fname, self.lname)

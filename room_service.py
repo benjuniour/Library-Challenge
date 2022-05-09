@@ -28,14 +28,10 @@ class RoomService:
         cursor.execute(" SELECT * FROM rooms WHERE occupant = ''")
         return cursor.fetchall()
 
-    def reserve_room(self, room_id: str, stu):
+    def reserve_room(self, room_id: str, student_name: str):
         """
             reserve room, by passing in room_id and student name
-
-            How do I pass the Student's details into this or do I just say
-            it's taken
         """
-        student_name = repr(stu)
         cursor.execute(" UPDATE rooms SET occupant = :name WHERE roomNum = :room_id", {'name': student_name, 'room_id': room_id})
         conn.commit()
 
