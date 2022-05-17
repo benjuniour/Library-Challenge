@@ -20,8 +20,9 @@ def logout(name: str) :
 
 def reserve_room(room_id: str):
   room_service = RoomService()
-  # room_service.reserve_room(room_id)
-  pass
+
+  # this doesn't stop users from reserving the room multiple times
+  rsvp_room = room_service.reserve_room(room_id)  
 
 def rooms():
   room_service = RoomService()
