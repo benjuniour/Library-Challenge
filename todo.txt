@@ -1,0 +1,24 @@
+Room Service & Book Service
+
+    remove all SQL code and put it into Service
+
+    THE SERVICE should not know how the operations work but just DO.
+
+    put the SQL code in the db_handler
+
+- Tidy up the Room Service:
+    error handling and removal of redundant code
+
+- Copy over code to book service (similar concept)
+
+
+DB Handler
+
+    - remove setting prim key or make the first col the prim key
+
+Revisit use cases
+
+Make a Student DB to hold students. This will be used for login authentication
+(Where will the creation of the table take place? Maybe in Session_service...)
+
+Start adding functions to controller.py 

@@ -8,6 +8,9 @@ class Room:
     """
         Room Object -> takes in a tuple of data
     """
+
+    # TODO: make room have setters instead of feeding a tuple
+    # let the constructor take in values if a list isn't passed in, 
     def __init__(self, dataTuple: tuple) -> None:
         self.roomID = dataTuple[0]
         self.numOccupants = dataTuple[1]

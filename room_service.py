@@ -21,6 +21,7 @@ class RoomService:
     def __init__(self) -> None:
         pass
 
+    # make a get all in DB_Handler 
     def find_all(self) -> List[dict]:
         roomDB.cursor.execute(" SELECT * FROM rooms WHERE numOccupants < maxOccupants ")
         return roomDB.cursor.fetchall()
@@ -69,26 +70,30 @@ class RoomService:
 
             return room_id  # gives the reserver the room_id for future reference
 
-    def toRoomObject(sql_result: List[tuple]) -> List[Room]:
+    def toRoomObject(self, sql_result: List[tuple]) -> List[Room]:
         roomList = []
         for sql_tuple in sql_result:
             roomList.append(Room(sql_tuple))
 
         return roomList
 
-    def insertRoom():
+    def insertRoom(self):
         roomDB.cursor.execute(" SELECT * FROM rooms ")
         table_size = len(roomDB.cursor.fetchall())
 
         roomType = int(random.randrange(1, 6))
         roomDB.cursor.execute("INSERT INTO rooms VALUES (?, ?, ?, ?)", (table_size + 1, 0, roomType, 0))
-        roomDB.cursor.commit()
+        roomDB.conn.commit()
 
 if __name__ == "__main__":
     room_service = RoomService()
     # print(room_service.find_all())
 
     # stu = Student("Jon", "Doe")
+    room_service.insertRoom()
+    room_service.insertRoom()
+    room_service.insertRoom()
+
     room_service.reserve_room(1)
     
     roomDB.conn.close()

@@ -24,9 +24,8 @@ class DB_Handler:
              for cols, types in zip(thisCols, thisColsTypes)]
 
         colsAndTypes = ",".join(dictToList)
-        print(colsAndTypes)
-        self.cursor.execute(""" CREATE TABLE IF NOT EXISTS ? ( ? ) """, 
-            (self.tableName, colsAndTypes))
+        # print(colsAndTypes)
+        self.cursor.execute(" CREATE TABLE IF NOT EXISTS " + self.tableName + " ( " + colsAndTypes + ")")
 
     def updateTable(self, searchCol, searchVal, updatedCol, newValue):
         self.cursor.execute(""" UPDATE rooms 
