@@ -1,5 +1,5 @@
 """
-    This the file for the Room Object
+    This file contains the Room Object and its methods
 """
 
 import typing
@@ -12,10 +12,10 @@ class Room:
     # TODO: make room have setters instead of feeding a tuple
     # let the constructor take in values if a list isn't passed in, 
     def __init__(self, dataTuple: tuple) -> None:
-        self.roomID = dataTuple[0]
-        self.numOccupants = dataTuple[1]
-        self.maxOccupants = dataTuple[2]
-        self.isRoomFull = dataTuple[-1]
+        self.roomID = int(dataTuple[0])
+        self.numOccupants = int(dataTuple[1])
+        self.maxOccupants = int(dataTuple[2])
+        self.isRoomFull = int(dataTuple[-1])
 
     def getRoomID(self) -> int:
         return self.roomID

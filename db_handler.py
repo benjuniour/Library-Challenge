@@ -24,10 +24,13 @@ class DB_Handler:
              for cols, types in zip(thisCols, thisColsTypes)]
 
         colsAndTypes = ",".join(dictToList)
-        # print(colsAndTypes)
+
         self.cursor.execute(" CREATE TABLE IF NOT EXISTS " + self.tableName + " ( " + colsAndTypes + ")")
 
     def updateTable(self, searchCol, searchVal, updatedCol, newValue):
+        """
+            Updates the a given table entry
+        """
         self.cursor.execute(""" UPDATE rooms 
             SET ? = ? 
             WHERE ? = ?
@@ -36,8 +39,27 @@ class DB_Handler:
         self.conn.commit()
 
     def showTable(self):
+        """
+            Displays the table's contents
+        """
         self.cursor.execute(" SELECT * FROM ?", (self.tableName,))
         print( self.cursor.fetchall() )
 
     def setPrimKey(self, colName):
+        """
+            Is supposed to set a column to a primary key
+        """
         pass
+
+    def getTable(self):
+        """
+            Gets the table entries
+        """
+        self.cursor.execute(" SELECT * FROM ?", (self.tableName,))
+        return self.cursor.fetchall()
+
+    def closeDB(self):
+        """
+            Closes off the DB connection
+        """
+        self.conn.close()
